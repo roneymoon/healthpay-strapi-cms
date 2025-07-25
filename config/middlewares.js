@@ -30,10 +30,11 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
+      origin: ['http://localhost:3000'], // ✅ Add frontend domain here
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
       headers: '*',
-      origin: ['http://localhost:3000', 'http://localhost:3001', 'https://your-domain.com']
-    }
+      credentials: true,
+    },
   },
   'strapi::poweredBy',
   'strapi::query',
